@@ -10903,6 +10903,10 @@ a.text-dark:focus {
   }
 }
 
+.container .add-new {
+  margin: 19px 19px 19px 0;
+}
+
 .container .action {
   position: relative;
 }

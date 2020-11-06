@@ -37357,9 +37357,32 @@ $(function () {
       columns: ':not(.noVis)'
     }]
   });
-  table.column(14).visible(false); // console.log(table.column(1).data().filter(function(val, i) {
-  //   console.log(val);
-  // }));
+  table.column(14).visible(true);
+  var btnList = [$('#btn-today'), $('#btn-yesterday'), $('#btn-2days-ago')];
+  var activeIndex = 0;
+  btnList.forEach(function (el) {
+    el.click(function () {
+      activeIndex = btnList.indexOf(el);
+      table.column(14).search(activeIndex);
+      table.draw(); // change color
+
+      for (i = 0; i < btnList.length; i++) {
+        if (i === activeIndex) {
+          btnList[i].removeClass('btn-light');
+          btnList[i].addClass('btn-dark');
+        } else {
+          btnList[i].removeClass('btn-dark');
+          btnList[i].addClass('btn-light');
+        }
+      }
+    });
+  }); // btnList.click(function() {
+  //   table.column(14).search("0");
+  //   table.draw();
+  // });
+  // table.column(14).data().filter(function(val, i) {
+  //   return val === "1";
+  // })
 });
 
 /***/ }),

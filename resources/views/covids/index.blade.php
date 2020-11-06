@@ -14,8 +14,11 @@
 <div class="row">
   <div class="col-sm-12">
     <h1 class="display-3">Covid Datatable</h1>
-    <div>
-      <a style="margin: 19px;" href="{{ route('covids.create')}}" class="btn btn-primary">Record New Case</a>
+    <a href="{{ route('covids.create')}}" class="btn btn-primary add-new"><i class="fas fa-plus-circle mr-2"></i>Add New Case</a>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-dark" id="btn-today">Today</button>
+      <button type="button" class="btn btn-light" id="btn-yesterday">Yesterday</button>
+      <button type="button" class="btn btn-light" id="btn-2days-ago">2 Days Ago</button>
     </div>
     <table class="display" id="covid-table">
       <thead>
