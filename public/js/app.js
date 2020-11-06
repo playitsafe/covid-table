@@ -37337,17 +37337,29 @@ $.extend($.fn.dataTable.defaults, {
 
 });
 $(function () {
-  $('#covid-table').DataTable({
+  var table = $('#covid-table').DataTable({
     dom: 'Bfrtip',
-    columnDefs: [{
-      targets: 1,
-      className: 'noVis'
-    }],
+    // columnDefs: [
+    //   {
+    //     targets: 1,
+    //     className: 'noVis'
+    //   }
+    // ],
+    // columnDefs: [
+    //   {
+    //       "targets": [ 0 ],
+    //       "visible": false,
+    //       "searchable": false
+    //   }
+    // ],
     buttons: [{
       extend: 'colvis',
       columns: ':not(.noVis)'
     }]
   });
+  table.column(14).visible(false); // console.log(table.column(1).data().filter(function(val, i) {
+  //   console.log(val);
+  // }));
 });
 
 /***/ }),

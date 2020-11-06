@@ -15,7 +15,6 @@ class CreateCovidsTable extends Migration
   {
     Schema::create('covids', function (Blueprint $table) {
       $table->id();
-      $table->date('date');
       $table->string('country');
       $table->integer('total_cases');
       $table->integer('new_cases');
@@ -30,6 +29,7 @@ class CreateCovidsTable extends Migration
       $table->integer('case_in_x_ppl');
       $table->integer('death_in_x_ppl');
       $table->integer('test_in_x_ppl');
+      $table->integer('daysbefore');
       $table->timestamps();
     });
   }
