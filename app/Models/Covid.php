@@ -24,5 +24,6 @@ class Covid extends Model
     'case_in_x_ppl',
     'death_in_x_ppl',
     'test_in_x_ppl',
+    'daysbefore'
   ];
 }

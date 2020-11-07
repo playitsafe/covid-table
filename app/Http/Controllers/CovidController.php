@@ -52,6 +52,7 @@ class CovidController extends Controller
       'case_in_x_ppl' => 'required',
       'death_in_x_ppl' => 'required',
       'test_in_x_ppl' => 'required',
+      'test_in_x_ppl' => 'required',
     ]);
 
     $covid = new ModelsCovid([
@@ -68,7 +69,8 @@ class CovidController extends Controller
       'population' => $request->get('population'),
       'case_in_x_ppl' => $request->get('case_in_x_ppl'),
       'death_in_x_ppl' => $request->get('death_in_x_ppl'),
-      'test_in_x_ppl' => $request->get('test_in_x_ppl')
+      'test_in_x_ppl' => $request->get('test_in_x_ppl'),
+      'daysbefore' => $request->get('daysbefore')
     ]);
     $covid->save();
     return redirect('/covids')->with('success', 'New Covid Data saved!');
