@@ -141,10 +141,11 @@ class CovidController extends Controller
     $covid -> case_in_x_ppl = $request->get('case_in_x_ppl');
     $covid -> death_in_x_ppl = $request->get('death_in_x_ppl');
     $covid -> test_in_x_ppl = $request->get('test_in_x_ppl');
+    $covid -> daysbefore = $request->get('daysbefore');
 
     $covid->save();
 
-    return redirect('/contacts')->with('success', 'Contact updated!');
+    return redirect('/covids')->with('success', 'Covid record updated!');
   }
 
   /**
