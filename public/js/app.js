@@ -37338,6 +37338,7 @@ $.extend($.fn.dataTable.defaults, {
 });
 $(function () {
   var table = $('#covid-table').DataTable({
+    deferLoading: true,
     dom: 'Bfrtip',
     // columnDefs: [
     //   {
@@ -37355,16 +37356,17 @@ $(function () {
     buttons: [{
       extend: 'colvis',
       columns: ':not(.noVis)'
-    }]
+    }],
+    oSearch: {}
   });
   table.column(14).visible(true);
+  table.column(14).search(0).draw();
   var btnList = [$('#btn-today'), $('#btn-yesterday'), $('#btn-2days-ago')];
   var activeIndex = 0;
   btnList.forEach(function (el) {
     el.click(function () {
       activeIndex = btnList.indexOf(el);
-      table.column(14).search(activeIndex);
-      table.draw(); // change color
+      table.column(14).search(activeIndex).draw(); // change color
 
       for (i = 0; i < btnList.length; i++) {
         if (i === activeIndex) {
