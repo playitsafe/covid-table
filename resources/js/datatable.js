@@ -37,13 +37,10 @@ $(function() {
         extend: 'colvis',
         columns: ':not(.noVis)'
       }
-    ],
-    oSearch: {
-
-    }
+    ]
   });
 
-  table.column(14).visible(true);
+  table.column(14).visible(false);
   table.column(14).search(0).draw();
 
   var btnList = [$('#btn-today'), $('#btn-yesterday'), $('#btn-2days-ago')];
